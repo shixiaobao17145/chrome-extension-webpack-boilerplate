@@ -1,6 +1,6 @@
 {
-  "name": "cisco-devnet-cookie-cleaner",
-  "version": "0.0.1",
+  "name": "Devnet-MST-Extension",
+  "version": "1.0.0",
   "description": "clean the cookie when logout from the cisco devnet",
   "scripts": {
     "build": "node utils/build.js",
