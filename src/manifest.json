@@ -1,5 +1,5 @@
 {
-	"name": "Cisco Devnet Cookie Cleaner",
+	"name": "Devnet-MST-Extension",
 	"options_page": "options.html",
 	"permissions":["storage", "cookies", "tabs", "http://*/*", "https://*/*"],
 	"background": {
