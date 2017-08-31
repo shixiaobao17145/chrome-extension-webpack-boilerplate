@@ -1,5 +1,8 @@
 console.log('this is from content script');
 import Constant from './constant';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Toolbar from './components/Toolbar';
 let addIdentity = function(){
 	document.children[0].setAttribute('devnet_cookie_cleaner_installed', true);
 }
@@ -9,6 +12,14 @@ let addIdentity = function(){
 //	console.log('completed');
 	addIdentity();
 //}
+
+window.onload = function(){
+	let d = document.createElement('div');
+	d.id = 'cl-mst-toolbar';
+	document.body.appendChild(d);	
+	ReactDOM.render(<Toolbar/>, d);
+}
+
 window.addEventListener("message", function(event) {
 	// We only accept messages from ourselves
 	if (event.source != window)
