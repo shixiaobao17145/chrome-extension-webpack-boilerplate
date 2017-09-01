@@ -17,7 +17,8 @@
 		{
 			"run_at":"document_start",
 			"matches": ["<all_urls>"],
-			"js": ["content.bundle.js"]
+			"js": ["content.bundle.js"],
+			"css":["content.bundle.css"]
 		}
 	],
   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"

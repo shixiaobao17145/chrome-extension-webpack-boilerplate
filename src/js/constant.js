@@ -4,7 +4,8 @@ export default {
 		"REGISTER":"REGISTER"
 	},
 	ACTION_TYPES:{
-		"DELETE":"DELETE"
+		"DELETE":"DELETE",
+		SHOW_TOOLBAR:'SHOW_TOOLBAR'
 	},
 	DEFAULT_DOMAINS:[".github.com","github.com"]
 }
