@@ -1,11 +1,15 @@
 export default {
+	MST_EXTENSION_NAME:'DEVNET_MST_EXTENSTION',
 	MSG_FROM:{
 		"DEVNET":"DEVNET",
 		"REGISTER":"REGISTER"
 	},
 	ACTION_TYPES:{
-		"DELETE":"DELETE",
-		SHOW_TOOLBAR:'SHOW_TOOLBAR'
+		DELETE:'DELETE',//for compatiable with the old version of this extension
+		DELETE_COOKIE:"DELETE_COOKIE",
+		SHOW_TOOLBAR:'SHOW_TOOLBAR',
+		REMOVE_TOOLBAR:'REMOVE_TOOLBAR',
+		START_OVER:'START_OVER'
 	},
 	DEFAULT_DOMAINS:[".github.com","github.com"]
 }

@@ -11,7 +11,9 @@ chrome.runtime.onMessage.addListener(
 					"from the extension", request.data);
 		let { action, domains = Constant.DEFAULT_DOMAINS } = request.data;
 		let cookies = [];
-		if(action == Constant.ACTION_TYPES.DELETE){
+		if(action == Constant.ACTION_TYPES.DELETE_COOKIE
+			//for compatiable with the old version of this extension
+		   || action == Constant.ACTION_TYPES.DELETE){
 			if(domains[0] == "*"){
 				cookies = Cookie.removeAll();
 			}else{
