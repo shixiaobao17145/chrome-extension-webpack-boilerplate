@@ -1,8 +1,12 @@
 export default {
+	MST_EXTENSION_ATTR_ID:'devnet_cookie_cleaner_installed',
 	MST_EXTENSION_NAME:'DEVNET_MST_EXTENSTION',
 	MSG_FROM:{
 		"DEVNET":"DEVNET",
 		"REGISTER":"REGISTER"
+	},
+	EVENT_TYPES:{
+		DISABLE_EXTENSTION:'DISABLE_EXTENSTION'
 	},
 	ACTION_TYPES:{
 		DELETE:'DELETE',//for compatiable with the old version of this extension
@@ -11,5 +15,11 @@ export default {
 		REMOVE_TOOLBAR:'REMOVE_TOOLBAR',
 		START_OVER:'START_OVER'
 	},
+	KEYS:{
+		COUNT_DOWN_SECONDS:'COUNT_DOWN_SENCONDS',
+		ENABLE:'ENABLE'
+	},
+	DEFAULT_EXTENSION_ENABLE:true,
+	DEFAULT_COUNT_DOWN_SENCONDS:29,
 	DEFAULT_DOMAINS:[".github.com","github.com"]
 }

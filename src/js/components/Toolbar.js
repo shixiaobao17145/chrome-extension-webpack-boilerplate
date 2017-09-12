@@ -7,8 +7,9 @@ import {
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RaisedButton from 'material-ui/RaisedButton';
 import {Toolbar, ToolbarGroup, ToolbarSeparator, ToolbarTitle} from 'material-ui/Toolbar';
+import Constant from '../constant';
+let { COUNT_DOWN_SECONDS } = Constant.KEYS;
 
-const DEFAULT_COUNT = 30;
 export default class MSTToolbar extends React.Component{
 	constructor(props){
 		super(props);
@@ -25,8 +26,10 @@ export default class MSTToolbar extends React.Component{
 	}
 	_detectProps(props){
 		if(props.activeStep == 2){
-			let count = props.count || this.props.count || DEFAULT_COUNT;
-			this.startCounting(count);
+			chrome.storage.local.get(COUNT_DOWN_SECONDS, (item) => {
+				let count = props.count || this.props.count || item[COUNT_DOWN_SECONDS] || Constant.DEFAULT_COUNT_DOWN_SENCONDS;
+				this.startCounting(count);
+			});
 		}else if(this._countTimer){
 			clearTimeout(this._countTimer);
 		}
@@ -40,7 +43,7 @@ export default class MSTToolbar extends React.Component{
 	startCounting(count){
 		if(count >= 1){
 			this.setState({
-				text:`Count down:${count} seconds`
+				text:`Count down:${count} s`
 			});
 			clearTimeout(this._countTimer);
 			let nextCountFn = ()=>this.startCounting(count-1);

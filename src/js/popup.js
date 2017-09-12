@@ -1,9 +1,17 @@
 import "../css/popup.css";
-//import Greeting from "./popup/greeting_component.jsx";
-//import React from "react";
-//import { render } from "react-dom";
-
-//render(
-//  <Greeting/>,
-//  window.document.getElementById("app-container")
-//);
+import React from "react";
+import { render } from "react-dom";
+import Setting from './components/Setting';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+const muiTheme = getMuiTheme({
+	appBar: {
+		height: 48,
+	},
+});
+render(
+	<MuiThemeProvider muiTheme={muiTheme}>
+		<Setting/>
+	</MuiThemeProvider>,
+	window.document.getElementById("app-container")
+);

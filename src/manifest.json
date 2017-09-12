@@ -1,6 +1,5 @@
 {
 	"name": "Devnet MST Extension",
-	"options_page": "options.html",
 	"permissions":["storage", "cookies", "tabs", "http://*/*", "https://*/*"],
 	"background": {
 		"page": "background.html"
