@@ -95,6 +95,13 @@ function onMessage(event) {
 			opts.onStartOver = function(){
 				loadWhenReady(removeToolBar);
 				window.postMessage({'from':Constant.MST_EXTENSION_NAME, action:Constant.ACTION_TYPES.START_OVER}, '*');
+				if(document.getElementById('cl-rt-app-container')){
+					window.location.reload();
+				}else if(location.pathname.indexOf('.ping') == location.pathname.length-'.ping'.length){
+					window.history.go(-3);
+				}else{
+					window.history.back();
+				}
 			}
 			loadWhenReady(showToolBar, opts);
 		}else if(data.action == Constant.ACTION_TYPES.REMOVE_TOOLBAR){
